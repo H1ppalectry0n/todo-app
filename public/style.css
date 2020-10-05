@@ -2,4 +2,65 @@ body{
     margin: 0;
     padding: 0;
     background: lightblue;
-}
+}.input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  .input::placeholder {
+    color: #d3d3d3;
+  }
+  .btn {
+    width: 100%;
+    padding: 8px 20px;
+    color: #fff;
+    font-size: 16px;
+    background-color: rgb(44, 113, 177);
+    border-radius: 3px;
+    border: none;
+  }
+  .btn:hover {
+    background-color: rgb(65, 130, 206);
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin: 10px;
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #906abd;
+    box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
+    padding: 15px 20px;
+    user-select: none;
+  }
+  p:hover {
+    cursor: pointer;
+  }
+  .complete p {
+    text-decoration: line-through;
+  }
+  .complete {
+    background-color: #7f6e94;
+  }
+  p {
+    margin: auto 5px;
+    padding: 0;
+  }
+  .btn-danger {
+    background-color: red;
+    border: none;
+    margin: 0;
+    border-radius: 5px;
+    width: 30px;
+  }
+  .btn-warning {
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    background-color: orange;
+    padding: 10px 5px;
+  }
