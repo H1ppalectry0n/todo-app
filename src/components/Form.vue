@@ -15,12 +15,7 @@
 
 <script>
 export default {
-  props: ["isEdit"],
-  data() {
-    return {
-      taskName: "",
-    };
-  },
+  props: ["isEdit", "taskName"],
   methods: {
     onSubmit() {
       if (this.taskName.trim() && !this.isEdit) {
@@ -29,14 +24,7 @@ export default {
         this.$emit("editTask", this.taskName);
         this.$emit("setEdit");
       }
-      this.taskName = "";
-    },
-  },
-  watch: {
-    taskName: function() {
-      if (!this.taskName.trim()) {
-        this.$emit("setEditFalse");
-      }
+      this.$emit("clearTaskName");
     },
   },
 };
