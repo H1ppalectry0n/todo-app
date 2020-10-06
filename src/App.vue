@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <Form v-bind:isEdit="isEdit" @setEdit='setEdit' @addTask='addTask'/>
+    <Form v-bind:isEdit="isEdit" @setEdit="setEdit" @addTask="addTask" />
     <hr />
-    <List v-bind:tasksList="tasksList"/>
+    <List
+      v-bind:tasksList="tasksList"
+      @setStatus="setStatus"
+      @deleteTask="deleteTask"
+    />
   </div>
 </template>
 
@@ -15,21 +19,27 @@ export default {
     Form,
     List,
   },
-  data(){
-    return{
+  data() {
+    return {
       isEdit: false,
       tasksList: [],
-    }
+    };
   },
-  methods:{
-    setEdit(){
-      this.isEdit = false
+  methods: {
+    setEdit() {
+      this.isEdit = false;
     },
-    addTask(taskName){
-      const newTask = {id: Date.now(), title: taskName, isComplete: false}
-      this.tasksList.push(newTask)
+    addTask(taskName) {
+      const newTask = { id: Date.now(), title: taskName, isComplete: false };
+      this.tasksList.push(newTask);
     },
-  }
+    setStatus(index) {
+      this.tasksList[index].isComplete = !this.tasksList[index].isComplete;
+    },
+    deleteTask(taskId) {
+      this.tasksList = this.tasksList.filter((e) => e.id !== taskId);
+    },
+  },
 };
 </script>
 
